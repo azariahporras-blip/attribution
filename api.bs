@@ -1316,9 +1316,18 @@ from [=transient activation-consuming APIs=]:
 
 *   Invoking either <a for=Attribution>saveImpression()</a>
     or <a for=Attribution>measureConversion()</a>
-    while the API is available
-    enables the API for that [=site=].
-    All [=descendent navigables=]
+    within an [=implementation-defined=] duration of the last activation,
+    enables the API for that site.
+
+*   Each activation makes the API available to at most one site.
+    Similar to [=transient activation=],
+    where [=transient activation-consuming API|consuming the activation=]
+    causes other similar APIs to be unavailable
+    until another activation occurs,
+    using the API on one site makes the API unavailable to other sites.
+
+*   When the API is successfully used,
+    the API is enabled for use by all [=descendant navigables=]
     of the [=top-level traversable=]'s [=active document=]
     (that is, all frames on the current page)
     can access the API without further availability checks.
@@ -3840,7 +3849,7 @@ urlPrefix: https://html.spec.whatwg.org/; spec: html; type: dfn
     text: active document; url: #nav-document
     text: activation notification
     text: activation triggering input event
-    text: descendent navigables
+    text: descendant navigables
     text: document state
     text: host; url: #concept-origin-host
     text: initiator origin; url: #document-state-initiator-origin
