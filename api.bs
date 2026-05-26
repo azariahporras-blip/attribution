@@ -449,7 +449,7 @@ partial interface Navigator {
 
 This provides three key functions:
 
-* A list of browser-supported aggregation functions ([[#find-aggregation-service]])
+* A list of browser-supported aggregation services ([[#find-aggregation-service]])
 * A means of asking the browser to save impressions ([[#save-impression-api]])
 * A method to request conversion measurement ([[#measure-conversion-api]])
 
