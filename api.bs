@@ -2749,8 +2749,8 @@ The <a enum-value for=AttributionAggregationProtocol>`dap-18-histogram`</a>
 aggregation method uses Prio [[PRIO]]
 and the Distributed Aggregation Protocol (DAP) [[DAP]].
 Specifically, this aggregation method uses
-the <dfn>Prio3L1BoundSum</dfn> instantiation [[PRIO-L1]]
-of the Prio3 Verifiable Distributed Aggregation Function (VDAF) [[VDAF]].
+the <dfn>Prio3L1BoundSum</dfn> [[PRIO-L1]]
+Verifiable Distributed Aggregation Function (VDAF) [[VDAF]].
 
 DAP and the [=Prio3L1BoundSum=] instantiation define how a report is prepared,
 encrypted, and submitted for aggregation.
