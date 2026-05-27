@@ -3459,7 +3459,7 @@ privacy budgets to mitigate this possibility.
 
 ## Controlling Cross-Site Participation ## {#site-trust-model}
 
-In order to produce an aggregate histgram,
+In order to produce an aggregate histogram,
 multiple sites need to cooperate.
 Every [=impression site=] needs to produce consistent values
 for the [=impressions=] it saves.
@@ -3491,7 +3491,7 @@ which reduces the set of entities that are able to poison aggregate results.
 Effective use of these options is especially useful
 in preventing some accidental inclusion of unwanted impressions.
 
-These filtering are limited in their efficacy
+These filtering options are limited in their efficacy
 against malicious attempts to poison results.
 Trust is rarely as strictly binary as these controls expect.
 An impression site that is listed might mix
