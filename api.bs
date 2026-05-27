@@ -315,6 +315,9 @@ path:images/overview.svg
 <figcaption>Overview of Attribution Operation</figcaption>
 </figure>
 
+
+## Recording Impressions ## {#overview-impression}
+
 When an [=impression=] occurs,
 the <a method for=Attribution>saveImpression()</a> method can be used
 to request that the browser save information.
@@ -322,6 +325,9 @@ This includes an identifier for the impression
 and some additional information about the impression.
 For instance, advertisers might use additional information
 to record whether the impression was an ad view or an ad click.
+
+
+## Conversions or Querying Impressions ## {#overview-conversion}
 
 At [=conversion=] time, a [=conversion report=] is created.
 A <dfn>conversion report</dfn> is an encrypted histogram contribution
@@ -354,6 +360,9 @@ This minimally involves encryption of the histogram.
 <p class=note>A site that invokes this API will always receive a valid conversion report.
 As a result, sites learn nothing about what happened on other sites from this interaction.
 
+
+## Aggregation ## {#overview-aggregation}
+
 The site can collect the encrypted histograms it receives from calls to this API
 and submit them to the aggregation service.
 
@@ -369,7 +378,21 @@ Upon receiving a set of encrypted histograms from a site, the aggregation servic
 
 3.  returns the aggregate to the site.
 
-We refer to the final output as an <dfn>attribution result</dfn>.
+We refer to the final output of the aggregation service as an <dfn>attribution result</dfn>.
+
+Browser implementations need to have a set of aggregation services that are trusted
+to reliably perform the above functions.
+From the set of services that are offered,
+the [=conversion site=] needs to reach an agreement
+with their choice of service to perform aggregation.
+
+Browsers might establish programs for registering aggregation services,
+similar in nature to the [root store program](https://www.ccadb.org/)
+used to authorize the certification authorities
+that browsers use in the validation
+of Web <abbr title="Public Key Infrastructure">PKI</abbr> certificates.
+The establishment of such a program
+is out of scope for this document.
 
 
 # API Usage # {#api}
@@ -528,7 +551,7 @@ The URL is passed as the {{AttributionConversionOptions/aggregationService}} par
 to <a method for=Attribution>measureConversion()</a> to select the identified aggregation service.
 
 The <dfn enum>AttributionAggregationProtocol</dfn> describes the submission protocol
-used by different [=aggregation services=]. This document defines two protocols:
+used by different [=aggregation services=]. This document defines one protocol:
 
 <dl dfn-for=AttributionAggregationProtocol dfn-type=enum-value>
   <dt><dfn>dap-18-histogram</dfn></dt>
